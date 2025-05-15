@@ -1,0 +1,19 @@
+{
+    "request": {
+      "method": "POST",
+      "url": "/api/cars",
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$[?(!(@.model == 'up tsi' || @.model == 'fusca'))]"
+        }
+      ]
+    },
+    "response": {
+      "status": 404,
+      "body": "{ \"message\": \"Vehicle not found.\" }",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  }
+  
