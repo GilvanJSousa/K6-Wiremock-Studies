@@ -6,7 +6,7 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 import { textSummary } from "https://jslib.k6.io/k6-summary/0.0.1/index.js";
 
 export const options = {
-    vus: 102, // Número de usuários virtuais "VU's"
+    vus: 20, // Número de usuários virtuais "VU's"
     duration: '5s', // Duração do teste
 }
 
@@ -41,7 +41,7 @@ export default function () {
 
 export function handleSummary(data) {
     return {
-      "report/test-500.pdf": htmlReport(data),
+      "../report/testk6.html": htmlReport(data),
       stdout: textSummary(data, { indent: " ", enableColors: true }),
     };
   }
